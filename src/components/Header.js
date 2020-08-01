@@ -1,13 +1,13 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
-class Header extends React.Component{
-    render(){
-        return(
-            <header>
-                It is header
-            </header>
-        );
-    }
-}
+const Header = () => (
+    <div>
+      <div>
+          <Link to="/">Home</Link> 
+          <Link to="/about">About</Link> 
+        </div>
+    </div>
+  )
 
 export default Header;
