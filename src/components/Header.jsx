@@ -1,0 +1,14 @@
+import React from 'react';
+import Nav from './Nav';
+import '../assets/css/header.css';
+
+const Header = ({siteTitle}) => (
+    <header className="header">
+      <div className="header__top">
+        <h1 className="header__title">{siteTitle}</h1>
+      </div>
+      <Nav/>
+    </header>
+  );
+
+export default Header;

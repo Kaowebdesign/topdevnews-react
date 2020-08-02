@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { ConnectedRouter } from 'connected-react-router'
 import routes from './routes';
+import './App.css'
 
 const App = ({ history }) => {
   return (
-    <div className="App">
+    <div>
       <ConnectedRouter history={history}>
         { routes }
       </ConnectedRouter>
