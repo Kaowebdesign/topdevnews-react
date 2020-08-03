@@ -1,24 +1,18 @@
 import {
-    ADD_CATEGORY
+    ADD_CATEGORY_SUCCESS
 } from '../constants/actionType';
 
-const defaultState = {
-    categories:[
-        {
-            id:1,
-            name:'react'    
-        },
-        {
-            id:2,
-            name:'vue'
-        }
-    ]
+const initialState = {
+    categories:[]
 };
 
-export default (state = defaultState,action) => {
+export default (state = initialState,action) => {
     switch(action.type){
-        case ADD_CATEGORY:{
-             return state;
+        case ADD_CATEGORY_SUCCESS:{
+             return {
+                ...state,
+                categories:[...state.categories,action.payload]
+                };
         }
         default:
             return state;

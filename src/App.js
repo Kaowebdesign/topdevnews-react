@@ -1,21 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { ConnectedRouter } from 'connected-react-router'
 import routes from './routes';
+import Header from './components/Header';
+import {connect} from 'react-redux';
+import { getCategories } from './actions/category';
 import './App.css'
 
-const App = ({ history }) => {
-  return (
-    <div>
-      <ConnectedRouter history={history}>
-        { routes }
-      </ConnectedRouter>
-    </div>
-  );
+const mapDispatchToProps = dispatch => {
+  return {
+    onGetCategories:() => {
+      dispatch(getCategories());
+    }
+  }
 }
+
+class App extends Component {
+  render(){
+    return (
+      <div>
+        <ConnectedRouter history={this.props.history}>
+          <Header siteTitle="Top Dev News"/>
+          <button onClick={this.props.onGetCategories}>Get categories</button>
+          { routes }
+        </ConnectedRouter>
+      </div>
+    )
+  }
+
+}
+
+
 
 App.propTypes = {
   history: PropTypes.object,
 }
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);
