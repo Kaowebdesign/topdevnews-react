@@ -6,7 +6,6 @@ export const getCategories = () => {
         axios
             .get('https://topdevnews.pp.ua/wp-json/wp/v2/categories')
             .then( result => {
-                console.log(result.data);
                 dispatch(addCategories(result.data));
             })
             .catch( error => {

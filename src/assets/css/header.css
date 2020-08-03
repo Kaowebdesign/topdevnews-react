@@ -9,3 +9,35 @@
 .header__title:hover{
     opacity: .8;
 }
+.nav{
+    padding: 15px;
+    margin: 0 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    text-transform: capitalize;
+}
+.nav__list{
+    text-align: center;
+}
+.nav__item{
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    padding: 0 16px;
+}
+.nav__link{
+    text-decoration: none;
+    color: rgb(0,0,0);
+    transition: .4s;
+    font-size: 14px;
+    line-height: 24px;
+}
+.nav__link:hover{
+    color: rgba(26, 26, 26, 0.7);
+    text-decoration: line-through;
+}
+.nav__link_home{
+    color: rgba(26, 26, 26, 0.5);
+}

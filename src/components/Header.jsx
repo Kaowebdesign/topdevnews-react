@@ -2,12 +2,12 @@ import React from 'react';
 import Nav from './Nav';
 import '../assets/css/header.css';
 
-const Header = ({siteTitle}) => (
+const Header = ({siteTitle,categories}) => (
     <header className="header">
       <div className="header__top">
         <h1 className="header__title">{siteTitle}</h1>
       </div>
-      <Nav/>
+      <Nav categories={categories}/>
     </header>
   );
 

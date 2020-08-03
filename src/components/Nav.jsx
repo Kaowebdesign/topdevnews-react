@@ -1,13 +1,23 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const Nav = () => (
-    <nav className="nav">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
+const Nav = function ({categories}) {
+    
+    const listItems = categories.map(item => 
+      <li key={item.id} className="nav__item">
+        <Link className="nav__link">{item.name}</Link>
+      </li>
+    );
+    
+    return (
+      <nav className="nav">
+        <ul className="nav__list">
+          <li className="nav__item"><Link to="/" className="nav__link nav__link_home">Home</Link></li>
+          {listItems}
+          <li className="nav__item"><Link to="/about" className="nav__link">About</Link></li>
         </ul>
-    </nav>
-);
+      </nav>
+    );
+};
 
 export default Nav;

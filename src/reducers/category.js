@@ -3,7 +3,7 @@ import {
 } from '../constants/actionType';
 
 const initialState = {
-    categories:[]
+    categories:[{id:2000}]
 };
 
 export default (state = initialState,action) => {
@@ -11,8 +11,8 @@ export default (state = initialState,action) => {
         case ADD_CATEGORY_SUCCESS:{
              return {
                 ...state,
-                categories:[...state.categories,action.payload]
-                };
+                categories:[...action.payload]
+             }
         }
         default:
             return state;

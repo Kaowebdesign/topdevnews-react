@@ -5,7 +5,14 @@ import routes from './routes';
 import Header from './components/Header';
 import {connect} from 'react-redux';
 import { getCategories } from './actions/category';
-import './App.css'
+import './App.css';
+
+const mapStateToProps = state => {
+  
+  let {categories} = state.category;
+
+  return {categories}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -13,15 +20,18 @@ const mapDispatchToProps = dispatch => {
       dispatch(getCategories());
     }
   }
-}
+};
 
 class App extends Component {
+  componentDidMount(){
+    this.props.onGetCategories();
+  }
   render(){
     return (
       <div>
         <ConnectedRouter history={this.props.history}>
-          <Header siteTitle="Top Dev News"/>
-          <button onClick={this.props.onGetCategories}>Get categories</button>
+          <Header siteTitle="Top Developer News" categories={this.props.categories} />
+          {/* <button onClick={this.props.onGetCategories}>Get categories</button> */}
           { routes }
         </ConnectedRouter>
       </div>
@@ -36,4 +46,4 @@ App.propTypes = {
   history: PropTypes.object,
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
