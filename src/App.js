@@ -31,7 +31,6 @@ class App extends Component {
       <div>
         <ConnectedRouter history={this.props.history}>
           <Header siteTitle="Top Developer News" categories={this.props.categories} />
-          {/* <button onClick={this.props.onGetCategories}>Get categories</button> */}
           { routes }
         </ConnectedRouter>
       </div>
