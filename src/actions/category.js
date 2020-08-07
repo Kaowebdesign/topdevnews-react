@@ -10,7 +10,7 @@ export const getCategories = () => {
             })
             .catch( error => {
                 console.log('error category => ',error);
-            })
+            });
     }
 }
 
