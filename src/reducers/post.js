@@ -1,15 +1,18 @@
 import {
-    ADD_POST_BY_POST_TYPE
+    ADD_MAIN_POSTS
 } from '../constants/actionType';
 
 const initialState = {
-    posts:[]
+    mainPosts:[]
 }
 
 export default (state = initialState, action) => {
     switch(action.type){
-        case ADD_POST_BY_POST_TYPE:{
-            return {...state, post:action.payload};
+        case ADD_MAIN_POSTS:{
+            return {
+                ...state, 
+                mainPosts:action.payload
+            };
         }
         default:
             return state;
