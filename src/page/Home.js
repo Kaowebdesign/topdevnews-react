@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { getPost } from '../actions/post';
+import {MAIN_POST_TYPE_ID} from '../constants/api';
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGetPosts:() => {
-      dispatch(getPost());
+    getMainPost:() => {
+      dispatch(getPost(MAIN_POST_TYPE_ID));
     }
   }
 }
@@ -13,7 +14,7 @@ const mapDispatchToProps = dispatch => {
 class Home extends Component {
 
   componentDidMount(){
-    this.props.onGetPosts();
+    this.props.getMainPost();
   }
 
   render(){

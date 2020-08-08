@@ -6,7 +6,6 @@ import About from '../page/About';
 
 const routes = (
     <div>
-    
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />

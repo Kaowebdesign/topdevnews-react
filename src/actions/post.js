@@ -1,16 +1,22 @@
 import axios from 'axios';
 import {ADD_POST_BY_POST_TYPE} from '../constants/actionType';
+import {BASE_API_URL,POSTS} from '../constants/api';
 
-export const getPost = () => {
+
+export const getPost = (typeId) => {
     return dispatch => {
         axios
-            .get('https://topdevnews.pp.ua/wp-json/acf/v3/posts')
+            .get(`${BASE_API_URL}${POSTS}`,{
+                params:{
+                    categories:typeId
+                }
+            })
             .then(result => {
                 dispatch(addPosts(result.data));
             })
             .catch(error => {
                 console.log('error category => ',error);
-            })
+            });
     }
 }
 
