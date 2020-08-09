@@ -5,7 +5,7 @@ import routes from './routes';
 import Header from './components/Header';
 import {connect} from 'react-redux';
 import { getCategories } from './actions/category';
-import './App.css';
+import './assets/css/main.css';
 
 const mapStateToProps = state => {
   

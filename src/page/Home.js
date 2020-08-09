@@ -5,14 +5,16 @@ import {
   MAIN_POST_TYPE_ID,
   TOP_POST_TYPE_ID
 } from '../constants/api';
+import AsideNav from '../components/AsideNav';
 import MainPost from '../components/MainPost';
 import '../assets/css/home.css';
 
 const mapStateTopProps = state => {
 
   let {mainPosts} = state.post;
+  let {categories} = state.category;
 
-  return {mainPosts};
+  return {mainPosts,categories};
 }
 
 const mapDispatchToProps = dispatch => {
@@ -35,6 +37,7 @@ class Home extends Component {
   render(){
     return (
       <div className="home">
+        <AsideNav categories={this.props.categories} />
         <div className="container-fluid">
           <div className="row">
             <div className="col-6">
