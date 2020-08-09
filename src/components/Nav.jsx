@@ -10,8 +10,8 @@ const Nav = function ({categories}) {
     );
     
     return (
-      <nav className="nav">
-        <ul className="nav__list">
+      <nav className="nav d-flex justify-content-center">
+        <ul className="nav__list mb-0">
           <li className="nav__item"><Link to="/" className="nav__link nav__link_home">Home</Link></li>
           {listItems}
           <li className="nav__item"><Link to="/about" className="nav__link">About</Link></li>

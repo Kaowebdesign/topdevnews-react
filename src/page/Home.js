@@ -6,6 +6,7 @@ import {
   TOP_POST_TYPE_ID
 } from '../constants/api';
 import MainPost from '../components/MainPost';
+import '../assets/css/home.css';
 
 const mapStateTopProps = state => {
 
@@ -34,8 +35,13 @@ class Home extends Component {
   render(){
     return (
       <div className="home">
-        <MainPost posts={this.props.mainPosts} />
-        IT IS HOME 
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-6">
+              <MainPost posts={this.props.mainPosts} />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
