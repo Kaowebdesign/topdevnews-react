@@ -1,9 +1,13 @@
 import {
-    ADD_MAIN_POSTS
+    ADD_MAIN_POSTS,
+    ADD_TOP_POSTS,
+    ADD_STANDART_POSTS
 } from '../constants/actionType';
 
 const initialState = {
-    mainPosts:[]
+    mainPosts:[],
+    topPosts:[],
+    standartPosts:[]
 }
 
 export default (state = initialState, action) => {
@@ -13,6 +17,18 @@ export default (state = initialState, action) => {
                 ...state, 
                 mainPosts:action.payload
             };
+        }
+        case ADD_TOP_POSTS:{
+            return{
+                ...state,
+                topPosts:action.payload
+            }
+        }
+        case ADD_STANDART_POSTS:{
+            return{
+                ...state,
+                standartPosts:action.payload
+            }
         }
         default:
             return state;

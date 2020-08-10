@@ -16,6 +16,9 @@ const AsideNav = ({categories}) => {
                             </Link>
                         </li>
                     ))}
+                    <li className="menu__item">
+                        <Link to="#" className="menu__link menu__link_home">About</Link>
+                    </li>
                 </ul>
                 <div href="#" className="menu__icon">
                     <span className="menu__icon_arrow">Меню</span>

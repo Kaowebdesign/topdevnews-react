@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import "../assets/css/main-post.css";
 
 const MainPost = ({posts}) => {
-    console.log(posts[0]);
+    
     if(!posts.length){
         return <p>Загрузка...</p>
     }
