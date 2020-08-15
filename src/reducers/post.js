@@ -1,13 +1,17 @@
 import {
     ADD_MAIN_POSTS,
     ADD_TOP_POSTS,
-    ADD_STANDART_POSTS
+    ADD_STANDART_POSTS,
+    ADD_RECOMEND_POSTS,
+    ADD_NOVELTY_POSTS
 } from '../constants/actionType';
 
 const initialState = {
     mainPosts:[],
     topPosts:[],
-    standartPosts:[]
+    standartPosts:[],
+    recomendPosts:[],
+    noveltyPosts:[]
 }
 
 export default (state = initialState, action) => {
@@ -28,6 +32,18 @@ export default (state = initialState, action) => {
             return{
                 ...state,
                 standartPosts:action.payload
+            }
+        }
+        case ADD_RECOMEND_POSTS:{
+            return{
+                ...state,
+                recomendPosts:action.payload
+            }
+        }
+        case ADD_NOVELTY_POSTS:{
+            return{
+                ...state,
+                noveltyPosts:action.payload
             }
         }
         default:

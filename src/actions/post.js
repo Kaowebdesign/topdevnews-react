@@ -19,18 +19,28 @@ import {
 } from '../constants/api';
 
 
-export const getPost = (typeId) => {
+export const getPost = (postId) => {
 
     return dispatch => {
         axios
             .get(`${BASE_API_URL}${POSTS}`,{
                 params:{
-                    categories:typeId
+                    categories:postId
                 }
             })
             .then(result => {
 
-                dispatch(addPost({typeId,posts:result.data}));
+                const mainPosts = result.data.filter(item => item.categories == MAIN_POST_TYPE_ID);
+                const topPosts = result.data.filter(item => item.categories == TOP_POST_TYPE_ID);
+                const standartPosts = result.data.filter(item => item.categories == STANDART_POST_TYPE_ID);
+                const recomendPosts = result.data.filter(item => item.categories == RECOMEND_POST_TYPE_ID);
+                const noveltyPosts = result.data.filter(item => item.categories == NOVELTY_POST_TYPE_ID);
+
+                dispatch(addPost({postId:MAIN_POST_TYPE_ID,posts:mainPosts}));
+                dispatch(addPost({postId:TOP_POST_TYPE_ID,posts:topPosts}));
+                dispatch(addPost({postId:STANDART_POST_TYPE_ID,posts:standartPosts}));
+                dispatch(addPost({postId:RECOMEND_POST_TYPE_ID,posts:recomendPosts}));
+                dispatch(addPost({postId:NOVELTY_POST_TYPE_ID,posts:noveltyPosts}));
                 
             })
             .catch(error => {
@@ -39,11 +49,11 @@ export const getPost = (typeId) => {
     }
 }
 
-const addPost = ({typeId,posts}) => {
+const addPost = ({postId,posts}) => {
     //var for current post type
     let type = '';
     //check psot type by type id
-    switch(typeId){
+    switch(postId){
         case MAIN_POST_TYPE_ID:{
             type = ADD_MAIN_POSTS;
             break;
