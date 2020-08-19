@@ -10,7 +10,7 @@ const MainPost = ({posts}) => {
 
     return(
         <div className="main-post">
-            <Link to='#' className="main-post__link">
+            <Link to={`/post/main/${posts[0].slug}`} className="main-post__link">
                 <div className="d-flex justify-content-between align-items-center">
                     <ul className="category-list m-0">
                         {posts[0].acf.post_categories.map(item => (

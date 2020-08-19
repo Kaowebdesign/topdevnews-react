@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { getPost } from '../actions/post';
-import {
-  MAIN_POST_TYPE_ID,
-  TOP_POST_TYPE_ID,
-  STANDART_POST_TYPE_ID,
-  RECOMEND_POST_TYPE_ID,
-  NOVELTY_POST_TYPE_ID
-} from '../constants/api';
 import AsideNav from '../components/AsideNav';
 import MainPost from '../components/MainPost';
 import TopPosts from '../components/TopPosts';
@@ -22,19 +14,7 @@ const mapStateTopProps = state => {
   return {mainPosts,topPosts,categories,standartPosts,recomendPosts,noveltyPosts};
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getPosts:() => {
-      dispatch(getPost([STANDART_POST_TYPE_ID,MAIN_POST_TYPE_ID,TOP_POST_TYPE_ID,RECOMEND_POST_TYPE_ID,NOVELTY_POST_TYPE_ID]));
-    }
-  }
-}
-
 class Home extends Component {
-
-  componentDidMount(){
-    this.props.getPosts();
-  }
 
   render(){
     return (
@@ -81,4 +61,4 @@ class Home extends Component {
 }
   
 
-export default connect(mapStateTopProps,mapDispatchToProps)(Home);
+export default connect(mapStateTopProps,null)(Home);
