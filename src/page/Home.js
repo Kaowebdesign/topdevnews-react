@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import AsideNav from '../components/AsideNav';
 import MainPost from '../components/MainPost';
 import TopPosts from '../components/TopPosts';
 import LastPosts from '../components/LastPosts';
 import RecomendPost from '../components/RecomendPost';
 import CategoryPost from '../components/CategoryPost';
-import '../assets/css/home.css';
 
 const mapStateTopProps = state => {
+
   let {mainPosts,topPosts,standartPosts,recomendPosts,noveltyPosts} = state.post;
-  let {categories} = state.category;
-  return {mainPosts,topPosts,categories,standartPosts,recomendPosts,noveltyPosts};
+
+  return {mainPosts,topPosts,standartPosts,recomendPosts,noveltyPosts};
 }
 
 class Home extends Component {
@@ -20,7 +19,6 @@ class Home extends Component {
     return (
       <div className="home">
         <div className="home-wrap">
-          <AsideNav categories={this.props.categories} />
           <div className="container-fluid">
             <div className="row">
               <div className="col-6">

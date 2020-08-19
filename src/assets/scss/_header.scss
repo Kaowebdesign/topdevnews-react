@@ -1,0 +1,102 @@
+.header{
+    &__top{
+        padding: 20px 60px 16px;
+        text-align: center;
+    }
+    &__title{
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        &:hover{
+            opacity: .8;
+        }
+    }
+}
+
+.nav{
+    padding: 15px;
+    margin: 0 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    text-transform: capitalize;
+    &__list{
+        text-align: center;
+    }
+    &__item{
+        display: inline-block;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: .8px;
+        padding: 0 16px;
+    }
+    &__link{
+        text-decoration: none;
+        color: rgb(0,0,0);
+        transition: .4s;
+        font-size: 14px;
+        line-height: 24px;
+        &:hover{
+            color: rgba(26, 26, 26, 0.7);
+            text-decoration: line-through;
+        }
+        &_home{
+            color: rgba(26, 26, 26, 0.5);
+        }
+    }
+    
+}
+
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 998;
+    &__wrap{
+        height: 100%;
+        padding: 30px 100px 30px 50px;
+        background: rgb(26,26,26);
+        border-right: 10px solid #007cff;
+        transform: translateX(calc(-100% + 10px));
+        transition: .6s;
+        &:hover{
+            transform: translateX(0);
+            background: rgb(26,26,26);
+            border-color: rgb(26,26,26);
+        }
+        &:hover .menu__icon{
+            opacity: 0;
+        }
+    }
+    &__icon{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right:-50px;
+        transform: rotate(-90deg);
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        color:rgb(26,26,26);
+        transition: .6s;
+    }
+    &__item{
+        margin-bottom: 15px;
+    }
+    &__list{
+        list-style-type: none;
+        font-size: 24px;
+        text-transform: capitalize;
+    }   
+    &__link{
+        color: #ffffff;
+        text-transform: capitalize;
+        &:hover{
+            color: rgba(255,255,255,.75);
+            text-decoration: line-through;
+        }
+        &_home{
+            color: rgba(255,255,255,.6);
+        }
+    }
+}

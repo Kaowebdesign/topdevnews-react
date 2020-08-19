@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+html,body {
+    font-size: 16px;
+    min-width: 320px;
+}
+
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+@import "./main";
+@import "./header";

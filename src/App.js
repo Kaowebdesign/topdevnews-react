@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { ConnectedRouter } from 'connected-react-router'
 import routes from './routes';
 import Header from './components/Header';
+import AsideNav from './components/AsideNav';
 import {connect} from 'react-redux';
 import { getCategories } from './actions/category';
 import { getPost } from './actions/post';
@@ -13,7 +14,7 @@ import {
   RECOMEND_POST_TYPE_ID,
   NOVELTY_POST_TYPE_ID
 } from './constants/api';
-import './assets/css/main.css';
+import './assets/scss/style.scss';
 
 const mapStateToProps = state => {
   
@@ -42,14 +43,13 @@ class App extends Component {
     this.props.getPosts();
     console.log('render App');
   }
-
-  
   
   render(){
     return (
       <div>
         <ConnectedRouter history={this.props.history}>
           <Header siteTitle="Top Developer News" categories={this.props.categories} />
+          <AsideNav categories={this.props.categories} />
           { routes }
         </ConnectedRouter>
       </div>
