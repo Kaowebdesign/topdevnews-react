@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { ConnectedRouter } from 'connected-react-router'
 import routes from './routes';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import AsideNav from './components/AsideNav';
 import {connect} from 'react-redux';
 import { getCategories } from './actions/category';
@@ -48,9 +49,10 @@ class App extends Component {
     return (
       <div>
         <ConnectedRouter history={this.props.history}>
-          <Header siteTitle="Top Developer News" categories={this.props.categories} />
+          <Header siteTitle="Big App Caption" categories={this.props.categories} />
           <AsideNav categories={this.props.categories} />
           { routes }
+          <Footer siteTitle="Big App Caption" />
         </ConnectedRouter>
       </div>
     )

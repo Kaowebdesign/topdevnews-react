@@ -82,7 +82,7 @@ h2,h3,h4,p,span{
         font-size: 22px;
     }
     &__date{
-        font-family: 'Open Sans', sans-serif;
+        @extend %baseFont;
         font-size: 12px;
         color: rgba(0,0,0,.5);
     }
@@ -90,7 +90,7 @@ h2,h3,h4,p,span{
 
 .caption{
     position: relative;
-    font-family: 'Roboto Condensed', sans-serif;
+    @extend %thirdFont;
     padding: 0 0 12px ;
     font-size:32px;
     border-bottom: 6px solid #007cff;
@@ -103,7 +103,7 @@ h2,h3,h4,p,span{
         position: relative;
     }
     &__title{
-        font-family: 'Roboto Condensed', sans-serif;
+        @extend %thirdFont;
         color: #000000;
         font-size: 32px;
         padding: 0 0 12px;
@@ -149,7 +149,7 @@ h2,h3,h4,p,span{
         color: rgba(255, 255, 255, 0.7);
     }
     &__date{
-        font-family: 'Open Sans', sans-serif;
+        @extend %basePos;
         font-size: 12px;
         color: rgba(255, 255, 255, 0.7);
         text-transform: uppercase;
@@ -222,7 +222,7 @@ h2,h3,h4,p,span{
         text-decoration: none;
     }
     &__external{
-        font-family: 'Open Sans', sans-serif;
+        @extend %basePos;
         font-size: 12px;
         text-transform: uppercase;
         color: #007cff;
@@ -243,14 +243,14 @@ h2,h3,h4,p,span{
 }
 .single{
     &__img-wrap{
-        position: relative;
+        @extend %basePos;
         padding-top: 30%;
         overflow:hidden;
     }
     &__img{
+        @extend %absolutePos;
         min-height: 100%;
         min-width: 100%;
-        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
@@ -259,7 +259,7 @@ h2,h3,h4,p,span{
         filter: saturate(0.9) contrast(1.2) grayscale(0.3);
     }
     &__wrap{
-        position: relative;
+       @extend %basePos;
     }
     &__panel{
         padding: 30px 60px;
@@ -268,11 +268,12 @@ h2,h3,h4,p,span{
         background: #f5f5f5;
     }
     &__text{
-        font-family: 'Open Sans', sans-serif;
+        @extend %basePos;
         color: rgb(26,26,26);
     }
     &__title{
-        font-family: 'PT Serif', serif;
+        @extend %secondFont;
+        @extend %boldFont;
         font-size: 32px;
         color: rgb(26,26,26);
         margin-bottom: 15px;
@@ -281,16 +282,40 @@ h2,h3,h4,p,span{
         color: rgb(26,26,26) !important;
     }
     &__description{
-        font-family: 'PT Serif', serif;
+        @extend %secondFont;
         font-size: 18px;
         color: rgb(26,26,26);
     }
     &__content-text{
+        padding: 40px 0;
+        @extend %secondFont;
+
+        h2{
+            font-size: (32rem / 16);
+            margin: 10px 0 15px;
+        }
+        h3{
+            font-size: (28rem / 16);
+            margin: 10px 0 15px;
+        }
+        h4{
+            font-size: (26rem / 16);
+            margin: 20px 0 20px;
+        }
+        
+        a{
+            color: rgba(26, 26, 26,.75);
+            text-decoration: underline;
+            &:hover{
+                color: rgb(26,26,26);
+            }
+        }
+
         p{
-            font-family: 'PT Serif', serif;
-            font-size: 20px;
+            
+            font-size: (20rem / 16);
             color: rgb(26,26,26);
-            line-height: 32px;
+            line-height: (32rem / 16);
         }
     }
 }

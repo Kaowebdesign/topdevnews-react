@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from './Nav';
-import '../assets/css/header.css';
 
 const Header = ({siteTitle,categories}) => (
     <header className="header">

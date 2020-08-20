@@ -1,0 +1,56 @@
+.footer{
+    background-color: rgb(26,26,26);
+    padding: 30px 60px;
+    &__text{
+        color: rgba(255,255,255,.9);
+        font-size: (14rem / 16);
+        &_sm{
+            font-size: (14rem / 16);
+        }
+    }
+    &__list{
+        @extend %nullList;
+        @extend %baseFlex;
+    }
+    &__link{
+        &:hover{
+            color: rgb(255,255,255);
+            text-decoration: underline;
+        }
+    }
+    &__item{
+        @extend %basePos;
+        &::after{
+            content: "|";
+            @extend %absolutePos;
+            display: block;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 5px;
+            color: rgba(255,255,255,.7);
+        }
+        &:last-child::after{
+            content: none;
+        }
+    }
+    &__mail-links{
+        @extend %baseFlex;
+        @extend %columnFlex;
+    }
+    &__mails-link{
+        &:hover{
+            color: rgb(255,255,255);
+            text-decoration: underline;
+        }
+    }
+    &__about{
+        color: rgba(255,255,255,.7);
+        text-decoration: underline;
+        margin: 0 5px;
+        &:hover{
+            color: rgb(255,255,255);
+        }
+    }
+    
+
+}
