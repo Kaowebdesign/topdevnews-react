@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const CategoryPost = ({posts}) => {
+const CategoryPost = ({posts,category}) => {
 
     if(!posts.length){
         return <p>Загрузка...</p>
@@ -10,7 +10,7 @@ const CategoryPost = ({posts}) => {
     return(
         <div className="col-3">
             {posts.map((item,index) => (
-                <Link to="#" className="base-post__link" key={index}>
+                <Link to={`/post/${category}/${item.slug}`} className="base-post__link" key={index}>
                     <div className="d-flex justify-content-between align-items-center">
                         <ul className="category-list m-0">
                             {item.acf.post_categories && item.acf.post_categories.map(elem => (

@@ -8,7 +8,7 @@ const RecomendPost = ({posts}) => {
 
     return(
         <div>
-            <Link to='#' className="recomend-post__link main-post__link">
+            <Link to={`/post/recomend/${posts[0].slug}`} className="recomend-post__link main-post__link">
                 <h2 className="recomend-post__title mb-0">Мы рекомендуем:</h2>
                 <div className="recomend-post__img-wrap">
                     <img src={posts[0].acf.post_image.sizes['twentyseventeen-featured-image']} alt={posts[0].title.rendered} className="recomend-post__img"/>

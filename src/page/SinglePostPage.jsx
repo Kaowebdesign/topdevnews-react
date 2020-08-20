@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 
 
 const SinglePost = ({posts}) => {
 
-    console.log(posts);
+    useEffect(() => {
+       window.scrollTo(0,0);
+    });
+
     if(!posts){
         return(
             <p>Загрузка...</p>
@@ -59,31 +62,31 @@ const mapStateToProps = (state,ownProps) => {
     switch(type){
         case 'main':{
             return {
-                posts:state.post.mainPosts.find(post => post.slug.toLowerCase() == slug.toLowerCase())
+                posts:state.post.mainPosts.find(post => post.slug.toLowerCase() === slug.toLowerCase())
             }
             break;
         }
         case 'top':{
             return {
-                posts:state.post.topPosts.find(post => post.slug.toLowerCase() == slug.toLowerCase())
+                posts:state.post.topPosts.find(post => post.slug.toLowerCase() === slug.toLowerCase())
             }
             break;
         }
         case 'standart':{
             return {
-                posts:state.post.standartPosts.find(post => post.slug.toLowerCase() == slug.toLowerCase())
+                posts:state.post.standartPosts.find(post => post.slug.toLowerCase() === slug.toLowerCase())
             }
             break;
         }
         case 'recomend':{
             return {
-                posts:state.post.recomendPosts.find(post => post.slug.toLowerCase() == slug.toLowerCase())
+                posts:state.post.recomendPosts.find(post => post.slug.toLowerCase() === slug.toLowerCase())
             }
             break;
         }
         case 'novelty':{
             return {
-                posts:state.post.noveltyPosts.find(post => post.slug.toLowerCase() == slug.toLowerCase())
+                posts:state.post.noveltyPosts.find(post => post.slug.toLowerCase() === slug.toLowerCase())
             }
             break;
         }

@@ -48,7 +48,7 @@ class Home extends Component {
                 </div>
               </div>
               <div className="row novelty__posts">
-                <CategoryPost posts={this.props.noveltyPosts}/>
+                <CategoryPost posts={this.props.noveltyPosts} category="novelty" />
               </div>
             </div>
           </div>

@@ -42,17 +42,16 @@ class App extends Component {
     this.props.onGetCategories();
     //get all posts
     this.props.getPosts();
-    console.log('render App');
   }
   
   render(){
     return (
       <div>
         <ConnectedRouter history={this.props.history}>
-          <Header siteTitle="Big App Caption" categories={this.props.categories} />
+          <Header siteTitle="Top Developer News" categories={this.props.categories} />
           <AsideNav categories={this.props.categories} />
           { routes }
-          <Footer siteTitle="Big App Caption" />
+          <Footer siteTitle="Top Developer News" />
         </ConnectedRouter>
       </div>
     )

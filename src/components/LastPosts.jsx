@@ -5,7 +5,7 @@ const LastPosts = ({posts}) => {
     return (
         <div>
             {posts.map((item, index) => (
-                <Link to="#" className="base-post__link" key={index}>
+                <Link to={`/post/standart/${item.slug}`} className="base-post__link" key={index}>
                     <div className="d-flex justify-content-between align-items-center">
                         <ul className="category-list m-0">
                             {item.acf.post_categories && item.acf.post_categories.map(elem => (
