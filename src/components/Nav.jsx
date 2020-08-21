@@ -5,7 +5,7 @@ const Nav = function ({categories}) {
     
     const listItems = categories.map(item => 
       <li key={item.id} className="nav__item">
-        <Link to="/" className="nav__link" >{item.name}</Link>
+        <Link to={`/posts/${item.id}`} className="nav__link" >{item.name}</Link>
       </li>
     );
     
