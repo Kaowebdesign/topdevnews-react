@@ -72,6 +72,7 @@ h2,h3,h4,p,span{
     &__link{
         display: inline-block;
         margin-bottom: 20px;
+        width:100%;
     }
     &__caption{
         font-family: 'PT Serif', serif;
@@ -240,6 +241,23 @@ h2,h3,h4,p,span{
         font-family: 'PT Serif', serif;
         font-size: 14px;
     }
+}
+.category-post{
+    &__img-wrap{
+        @extend %basePos;
+        padding-top: 55%;
+        height: initial;
+        overflow: hidden;
+    }
+    &__img{
+        @extend %absolutePos;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        min-width: 100%;
+        min-height: 100%;
+    }
+
 }
 .single{
     &__img-wrap{
