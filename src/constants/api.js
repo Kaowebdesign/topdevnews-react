@@ -6,3 +6,10 @@ export const TOP_POST_TYPE_ID = 4;
 export const RECOMEND_POST_TYPE_ID = 7;
 export const NOVELTY_POST_TYPE_ID = 8;
 export const STANDART_POST_TYPE_ID = 6;
+export const POST_TYPE = {
+    [MAIN_POST_TYPE_ID]:'main',
+    [TOP_POST_TYPE_ID]:'top',
+    [RECOMEND_POST_TYPE_ID]:'recomend',
+    [NOVELTY_POST_TYPE_ID]:'novelty',
+    [STANDART_POST_TYPE_ID]:'stasndart'
+}

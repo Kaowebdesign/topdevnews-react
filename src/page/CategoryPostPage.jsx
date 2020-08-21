@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {Link} from "react-router-dom";
+import {POST_TYPE} from "../constants/api";
 
 const CategoryPostPage = ({posts}) => {
     console.log(posts);
@@ -13,7 +14,7 @@ const CategoryPostPage = ({posts}) => {
         <div className="home-wrap">
              {posts.map((item,index) => (
                 <div className="col-4">
-                    <Link to="#" className="base-post__link" key={index}>
+                    <Link to={`/post/${POST_TYPE[item.categories[0]]}/${item.slug}`} className="base-post__link" key={index}>
                         <div className="d-flex justify-content-between align-items-center">
                             <ul className="category-list m-0">
                                 {item.acf.post_categories && item.acf.post_categories.map(elem => (
