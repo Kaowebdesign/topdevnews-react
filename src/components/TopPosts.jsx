@@ -1,11 +1,12 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
 
-const TopPosts = ({posts}) => {
+const TopPosts = ({topPosts}) => {
 
     return (
         <div>
-            {posts.map((item,index) => (
+            {topPosts.map((item,index) => (
                 <Link to={`/post/top/${item.slug}`} className="base-post__link" key={index}>
                     <div className="d-flex justify-content-between align-items-center">
                         <ul className="category-list m-0">
@@ -28,4 +29,11 @@ const TopPosts = ({posts}) => {
     );
 }
 
-export default TopPosts;
+const mapStateToProps = (state) => {
+
+    let {topPosts} = state.post;
+
+    return {topPosts}
+}
+
+export default connect(mapStateToProps,null)(TopPosts);

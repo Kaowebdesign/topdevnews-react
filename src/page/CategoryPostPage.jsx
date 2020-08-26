@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {Link} from "react-router-dom";
 import {POST_TYPE} from "../constants/api";
+import TopPosts from "../components/TopPosts";
 
 const CategoryPostPage = ({posts}) => {
     console.log(posts);
@@ -34,10 +35,15 @@ const CategoryPostPage = ({posts}) => {
                                             <span className="base-post__date">{item.acf.post_date}</span>
                                         </div>
                                         <h2 className="base-post__caption mt-0 mb-2">{item.title.rendered}</h2>
+                                        <div className="base-post__description" dangerouslySetInnerHTML={{__html:item.excerpt.rendered}}></div>
                                     </Link>
                                 </div>
                             ))}
                         </div>
+                    </div>
+                    <div className="col-3">
+                        <h2 className="caption caption_base">Топ новости:</h2>
+                        <TopPosts/>
                     </div>
                 </div>
             </div>

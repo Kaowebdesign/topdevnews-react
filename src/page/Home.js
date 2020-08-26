@@ -25,7 +25,7 @@ class Home extends Component {
                 <MainPost posts={this.props.mainPosts} />
               </div>
               <div className="col-3">
-                <TopPosts posts={this.props.topPosts}/>
+                <TopPosts/>
               </div>
               <div className="col-3">
                 <h2 className="caption caption_base">Последние новости:</h2>

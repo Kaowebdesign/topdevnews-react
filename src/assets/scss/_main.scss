@@ -87,6 +87,13 @@ h2,h3,h4,p,span{
         font-size: 12px;
         color: rgba(0,0,0,.5);
     }
+    &__description{
+        p{
+            font-family: 'PT Serif', serif;
+            font-size:14px;
+            color: rgba(26,26,26,1);
+        }   
+    }
 }
 
 .caption{
