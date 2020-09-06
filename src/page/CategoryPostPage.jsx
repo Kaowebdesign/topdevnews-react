@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {POST_TYPE} from "../constants/api";
 import TopPosts from "../components/TopPosts";
 
-const CategoryPostPage = ({posts}) => {
+const CategoryPostPage = ({posts,categoryName}) => {
     console.log(posts);
     if(!posts.length){
         return(
@@ -12,14 +12,21 @@ const CategoryPostPage = ({posts}) => {
         )
     }
     return(
-        <div className="home-wrap">
+        <div className="home-wrap category-page">
             <div className="container-fluid">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="category-page__panel text-center">
+                            <h1 className="caption caption_category mb-0">{categoryName}</h1>
+                        </div>
+                    </div>
+                </div>
                 <div className="row">
                     <div className="col-9">
                         <div className="row">
                             {posts.map((item,index) => (
-                                <div className="col-6">
-                                    <Link to={`/post/${POST_TYPE[item.categories[0]]}/${item.slug}`} className="base-post__link" key={index}>
+                                <div className="col-6" key={index}>
+                                    <Link to={`/post/${POST_TYPE[item.categories[0]]}/${item.slug}`} className="base-post__link">
                                         <div className="d-flex justify-content-between align-items-center">
                                             <ul className="category-list m-0">
                                                 {item.acf.post_categories && item.acf.post_categories.map(elem => (
@@ -35,7 +42,7 @@ const CategoryPostPage = ({posts}) => {
                                             <span className="base-post__date">{item.acf.post_date}</span>
                                         </div>
                                         <h2 className="base-post__caption mt-0 mb-2">{item.title.rendered}</h2>
-                                        <div className="base-post__description" dangerouslySetInnerHTML={{__html:item.excerpt.rendered}}></div>
+                                        <p className="base-post__description mb-0" dangerouslySetInnerHTML={{__html:item.acf.post_description}}></p>
                                     </Link>
                                 </div>
                             ))}
@@ -53,23 +60,34 @@ const CategoryPostPage = ({posts}) => {
 
 const mapStateToProps = (state, ownProps) => {
 
-    const categoryId = ownProps.match.params.categoryId;
-    
-    const post = {...state.post}
+    //get all categories from state
+    const { categories } = {...state.category};
+    //get category name from router params
+    const categoryName = ownProps.match.params.categoryName;
+    //defina object for current category
+    let currentCategory = null;
 
+    //search current category from category name
+    if(categories.length){
+        currentCategory = categories.find(item => item.name.toLowerCase() == categoryName.toLowerCase());
+    }
+    
+    //get all posts from state
+    const post = {...state.post}
+    
     let postItems,
         posts = [];
 
     for (var key in post){
 
-        postItems = post[key].filter(item => item.tags.includes(parseInt(categoryId)));
+        postItems = post[key].filter(item => item.tags.includes(parseInt(currentCategory.id)));
        
         if(postItems.length){
             posts = [...posts,...postItems];
         }
     }
     
-    return {posts}
+    return {posts,categoryName}
 }
 
 export default connect(mapStateToProps,null)(CategoryPostPage);

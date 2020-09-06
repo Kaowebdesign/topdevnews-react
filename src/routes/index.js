@@ -12,7 +12,7 @@ const routes = (
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/post/:type/:slug" component={SinglePostPage} />
-            <Route path="/posts/:categoryId" component={CategoryPostPage} />
+            <Route path="/posts/:categoryName" component={CategoryPostPage} />
         </Switch>
     </div>
 );

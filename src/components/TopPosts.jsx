@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const TopPosts = ({topPosts}) => {
 
     return (
-        <div>
+        <div className="top-posts">
             {topPosts.map((item,index) => (
                 <Link to={`/post/top/${item.slug}`} className="base-post__link" key={index}>
                     <div className="d-flex justify-content-between align-items-center">

@@ -3,7 +3,7 @@ import {
 } from '../constants/actionType';
 
 const initialState = {
-    categories:[{id:2000}]
+    categories:[]
 };
 
 export default (state = initialState,action) => {
