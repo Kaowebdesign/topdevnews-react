@@ -5,12 +5,13 @@ import {POST_TYPE} from "../constants/api";
 import TopPosts from "../components/TopPosts";
 
 const CategoryPostPage = ({posts,categoryName}) => {
-    console.log(posts);
+
     if(!posts.length){
         return(
             <p>Загрузка...</p>
         )
     }
+    
     return(
         <div className="home-wrap category-page">
             <div className="container-fluid">
@@ -30,7 +31,9 @@ const CategoryPostPage = ({posts,categoryName}) => {
                                         <div className="d-flex justify-content-between align-items-center">
                                             <ul className="category-list m-0">
                                                 {item.acf.post_categories && item.acf.post_categories.map(elem => (
-                                                    <li className="category-list__item m-0 pr-3" key={elem.term_id}>{elem.name}</li>
+                                                    <li className="category-list__item m-0 pr-3" key={elem.term_id}>
+                                                        <Link to={`/posts/${elem.name.toLowerCase()}`} className={'category-list__link ' + (elem.name.toLowerCase() === categoryName.toLowerCase() ? "active" : null)}>{elem.name}</Link>
+                                                    </li>
                                                 ))}
                                             </ul>
                                             <span className="main-post__external">{item.acf.post_external}</span>

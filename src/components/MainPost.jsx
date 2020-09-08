@@ -13,7 +13,9 @@ const MainPost = ({posts}) => {
                 <div className="d-flex justify-content-between align-items-center">
                     <ul className="category-list m-0">
                         {posts[0].acf.post_categories.map(item => (
-                            <li className="category-list__item m-0 pr-3" key={item.term_id}>{item.name}</li>
+                            <li className="category-list__item m-0 pr-3" key={item.term_id}>
+                                <Link to={`/posts/${item.name.toLowerCase()}`} className="category-list__link">{item.name}</Link>
+                            </li>
                         ))}
                     </ul>
                         <span className="main-post__external">{posts[0].acf.post_external}</span>

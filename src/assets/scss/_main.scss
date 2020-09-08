@@ -11,6 +11,8 @@ h2,h3,h4,p,span{
     list-style-type:none;
     &__item{
         position: relative;
+        display: inline-block;
+        color: #F65936;
         font-family: 'Open Sans', sans-serif;
         display: inline-block;
         color: #F65936;
@@ -27,6 +29,28 @@ h2,h3,h4,p,span{
         }
         &:last-child::after{
             content: none;
+        }
+    }
+    &__link{
+        @extend %nullLink;
+        font-family: 'Open Sans', sans-serif;
+        display: inline-block;
+        color: #F65936;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 400;
+        &.active{
+            text-decoration: line-through;
+            &:hover{
+                opacity: 1;
+                text-decoration: none;
+            }
+        }
+        &:hover{
+            color: #F65936;
+            opacity: .7;
+            text-decoration: line-through;
+            cursor: pointer;
         }
     }
 
@@ -175,6 +199,12 @@ h2,h3,h4,p,span{
     }
     &__item{
         color: rgba(255, 255, 255, 0.7);
+    }
+    &__route-link{
+        color: rgba(255, 255, 255, 0.7);
+        &:hover{
+            color: rgba(255,255,255,1);
+        }
     }
     &__date{
         @extend %basePos;

@@ -14,5 +14,5 @@ export const POST_TYPE = {
     [TOP_POST_TYPE_ID]:'top',
     [RECOMEND_POST_TYPE_ID]:'recomend',
     [NOVELTY_POST_TYPE_ID]:'novelty',
-    [STANDART_POST_TYPE_ID]:'stasndart'
+    [STANDART_POST_TYPE_ID]:'standart'
 }

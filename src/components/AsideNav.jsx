@@ -11,7 +11,7 @@ const AsideNav = ({categories}) => {
                     </li>
                     {categories.map(item => (
                         <li className="menu__item" key={item.id}>
-                            <Link to="#" className="menu__link">
+                            <Link to={`/posts/${item.name}`} className="menu__link">
                                 {item.name}
                             </Link>
                         </li>

@@ -16,7 +16,9 @@ const RecomendPost = ({posts}) => {
                         <div className="d-flex justify-content-start align-items-center">
                             <ul className="category-list recomend-post__list m-0">
                                 {posts[0].acf.post_categories && posts[0].acf.post_categories.map(item => (
-                                    <li className="category-list__item recomend-post__item m-0 pr-3" key={item.term_id}>{item.name}</li>
+                                    <li className="category-list__item recomend-post__item m-0 pr-3" key={item.term_id}>
+                                        <Link to={`/posts/${item.name.toLowerCase()}`} className="category-list__link recomend-post__route-link">{item.name}</Link>
+                                    </li>
                                 ))}
                             </ul>
                         </div>
