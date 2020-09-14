@@ -1,0 +1,21 @@
+@media only screen and (max-width: 1440px) {
+    .base-post{
+        &__caption{
+            font-size: (18rem / 16);
+        }
+    }
+    .main-post{
+        &__caption{
+            font-size: (24rem / 16);
+        }
+        &__text{
+            font-size: (12rem / 16);
+        }
+    }
+    .base-post{
+        &__img-wrap{
+            height: 200px;
+        }
+    }
+   
+}

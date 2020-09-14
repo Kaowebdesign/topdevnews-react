@@ -82,6 +82,9 @@ const mapStateToProps = (state,ownProps) => {
             post = posts.noveltyPosts.find(post => post.slug.toLowerCase() === slug.toLowerCase());
             break;
         }
+        default:{
+            post = {}
+        }
     }
 
     return {post}

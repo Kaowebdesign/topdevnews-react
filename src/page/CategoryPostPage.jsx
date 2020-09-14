@@ -72,7 +72,7 @@ const mapStateToProps = (state, ownProps) => {
 
     //search current category from category name
     if(categories.length){
-        currentCategory = categories.find(item => item.name.toLowerCase() == categoryName.toLowerCase());
+        currentCategory = categories.find(item => item.name.toLowerCase() === categoryName.toLowerCase());
     }
     
     //get all posts from state

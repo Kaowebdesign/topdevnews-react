@@ -20,7 +20,9 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     text-transform: capitalize;
     &__list{
+        @extend %horizontalScroll;
         text-align: center;
+        display: flex;
     }
     &__item{
         display: inline-block;
@@ -36,6 +38,7 @@
         transition: .4s;
         font-size: 14px;
         line-height: 24px;
+        white-space: nowrap;
         &:hover{
             color: rgba(26, 26, 26, 0.7);
             text-decoration: line-through;
