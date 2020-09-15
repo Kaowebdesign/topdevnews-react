@@ -3,6 +3,12 @@
         &__caption{
             font-size: (18rem / 16);
         }
+        &__img-wrap{
+            height: 180px;
+        }
+        &__link{
+            margin-bottom: 10px;
+        }
     }
     .main-post{
         &__caption{
@@ -12,10 +18,46 @@
             font-size: (12rem / 16);
         }
     }
-    .base-post{
-        &__img-wrap{
-            height: 200px;
+   
+}
+@media only screen and (max-width: 1240px) {
+    .header{
+        &__title{
+            font-size: (36rem / 16);
         }
     }
-   
+    .caption{
+        font-size: (24rem / 16);
+    }
+    .main-post{
+        &__text{
+            font-size: (10rem / 16);
+        }
+    }
+    .base-post{
+        &__caption{
+            font-size: (14rem / 16);
+        }
+        &__img-wrap{
+            height: 150px;
+        }
+        &__link{
+            margin-bottom: 0px;
+        }
+    }
+    .recomend-post{
+        &__link{
+            display: block;
+            margin-top: 60px;
+        }
+        &__caption{
+            font-size: (28rem / 16);
+        }
+    }
+    .nav{
+        padding: 10px 15px;
+        &__link{
+            font-size: (12rem / 16);
+        }
+    }
 }
