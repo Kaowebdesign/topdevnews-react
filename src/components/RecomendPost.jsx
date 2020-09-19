@@ -23,7 +23,7 @@ const RecomendPost = ({posts}) => {
                             </ul>
                         </div>
                         <div className="row">
-                            <div className="col-8">
+                            <div className="col-10 col-md-8">
                                 <h2 className="recomend-post__caption">{posts[0].title.rendered}</h2>
                                 <p className="recomend-post__date m-0">{posts[0].acf.post_date}</p>
                             </div>

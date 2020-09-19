@@ -1,10 +1,22 @@
+@media only screen and (max-width: 1500px) {
+    .base-post{
+        &__caption{
+            font-size: (19rem / 16);
+        }
+    }
+    .main-post{
+        &__caption{
+            font-size: (28rem / 16);
+        }
+    }
+}
 @media only screen and (max-width: 1440px) {
     .base-post{
         &__caption{
             font-size: (18rem / 16);
         }
         &__img-wrap{
-            height: 180px;
+            // height: 180px;
         }
         &__link{
             margin-bottom: 10px;
@@ -18,7 +30,11 @@
             font-size: (12rem / 16);
         }
     }
-   
+    .footer{
+        &__text{
+            font-size: (12rem / 16);
+        }
+    }
 }
 @media only screen and (max-width: 1240px) {
     .header{
@@ -39,7 +55,7 @@
             font-size: (14rem / 16);
         }
         &__img-wrap{
-            height: 150px;
+            // height: 150px;
         }
         &__link{
             margin-bottom: 0px;
@@ -60,8 +76,22 @@
             font-size: (12rem / 16);
         }
     }
+    .menu{
+        &__item{
+            margin-bottom: 0px;
+        }
+        &__link{
+            font-size: (16rem / 16);
+        }
+        &__icon{
+            right: -30px;
+        }
+        &__icon_arrow{
+            font-size: (12rem / 16);
+        }
+    }
 }
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1140px) {
     .recomend-post{
         &__panel{
             padding: 30px;
@@ -74,10 +104,13 @@
             font-size: (20rem / 16);
             padding: 0 0 6px;
         }
+        &__date{
+            font-size: (10rem / 16);
+        }
     }
     .top-posts{
         .base-post__img-wrap{
-            height: 116px;
+            // height: 116px;
         }
     }
     .novelty{
@@ -107,3 +140,66 @@
         font-size: (10rem / 16);
     }
 }
+@media only screen and (max-width: 992px) {
+    .nav{
+        margin: 0 45px;
+        padding: 5px 15px;
+    }
+    .header__top{
+        padding: 20px 30px 16px;
+    }
+    .home-wrap{
+        padding: 40px 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer__text{
+        max-width: 250px;
+    }
+    .top-posts{
+        display: flex;
+        padding-top: 30px;
+
+        .base-post__link{
+            &:first-child{
+                padding-right: 15px;
+            }
+            &:last-child{
+                padding-left: 15px;
+            }
+        }
+    }
+    .recomend-wrap{
+        padding: 0px;
+    }
+    .home-wrap{
+        padding: 30px;
+    }
+    .menu__icon{
+        top: 84px;
+        transform: rotate(-90deg) translateY(0);
+    }
+    .recomend-post{
+        &__img-wrap{
+            padding-bottom: 46%;
+        }
+        &__caption{
+            font-size: (14rem / 16);
+        }
+    }
+    
+    
+}
+@media only screen and (max-width: 576px) {
+    .top-posts{
+        flex-direction: column;
+        .base-post__link{
+            &:first-child,
+            &:last-child{
+                padding: 0;
+            }
+        }
+    }
+}
+

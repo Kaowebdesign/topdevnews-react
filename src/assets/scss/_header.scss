@@ -14,11 +14,29 @@
 }
 
 .nav{
+    @extend %basePos;
     padding: 15px;
     margin: 0 75px;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     text-transform: capitalize;
+    &::after,
+    &::before{
+        content: '';
+        @extend %absolutePos;
+        top: 0;
+        display: block;
+        width: 30px;
+        height: 100%;
+    }
+    &::after{
+        left: 0;
+        background: linear-gradient(90deg, rgba(255,255,255,1), rgba(255,255,255,0));
+    }
+    &::before{
+        right: 0;
+        background: linear-gradient(0deg, rgba(255,255,255,1), rgba(255,255,255,0));
+    }
     &__list{
         @extend %horizontalScroll;
         text-align: center;
@@ -67,7 +85,10 @@
         opacity: 0;
     }
     &__wrap{
+        @extend %noneScrollBar;
         height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
         padding: 30px 100px 30px 50px;
         background: rgb(26,26,26);
         border-right: 10px solid #007cff;

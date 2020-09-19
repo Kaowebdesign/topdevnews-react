@@ -8,7 +8,7 @@ const CategoryPost = ({posts,category}) => {
     }
     
     return(
-        <div className="col-3">
+        <div className="col-12 col-sm-6 col-lg-3">
             {posts.map((item,index) => (
                 <Link to={`/post/${category}/${item.slug}`} className="base-post__link" key={index}>
                     <div className="d-flex justify-content-between align-items-center">

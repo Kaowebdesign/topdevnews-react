@@ -21,18 +21,18 @@ class Home extends Component {
         <div className="home-wrap">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-6">
+              <div className="col-12 col-md-8 col-lg-6">
                 <MainPost posts={this.props.mainPosts} />
               </div>
-              <div className="col-3">
+              <div className="col-12 col-md-4 col-lg-3">
                 <TopPosts/>
               </div>
-              <div className="col-3">
+              <div className="d-none d-lg-block col-lg-3">
                 <h2 className="caption caption_base">Последние новости:</h2>
                 <LastPosts posts={this.props.standartPosts}/>
               </div>
             </div>
-            <div className="row">
+            <div className="row recomend-wrap">
               <div className="col-12">
                 <RecomendPost posts={this.props.recomendPosts}/>
               </div>
@@ -43,7 +43,7 @@ class Home extends Component {
           <div className="home-wrap">
             <div className="container-fluid">
               <div className="row novelty__top">
-                <div className="col-3">
+                <div className="col-lg-3 col-sm-6 col-12">
                   <h2 className="caption caption_base">Новости:</h2>
                 </div>
               </div>

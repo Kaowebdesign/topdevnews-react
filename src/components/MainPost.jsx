@@ -24,10 +24,10 @@ const MainPost = ({posts}) => {
                     <img src={posts[0].acf.post_image.sizes['twentyseventeen-featured-image']} alt={posts[0].title.rendered} className="main-post__img filtered-img"/>
                 </div>
                 <div className="row mt-3">
-                    <div className="col-xl-8 col-7">
+                    <div className="col-xl-8 col-lg-7 col-sm-6 col-12">
                         <h2 className="main-post__caption">{posts[0].title.rendered}</h2>
                     </div>
-                    <div className="col-xl-4 col-5">
+                    <div className="col-xl-4 col-lg-5 col-sm-6 col-12">
                         <p className="main-post__text m-0">{posts[0].acf.post_description}</p>
                     </div>
                 </div>
