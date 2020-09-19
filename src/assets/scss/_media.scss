@@ -61,3 +61,49 @@
         }
     }
 }
+@media only screen and (max-width: 1440px) {
+    .recomend-post{
+        &__panel{
+            padding: 30px;
+        }
+        &__caption{
+            font-size: (18rem / 16);
+            margin-bottom: 6px;
+        }
+        &__title{
+            font-size: (20rem / 16);
+            padding: 0 0 6px;
+        }
+    }
+    .top-posts{
+        .base-post__img-wrap{
+            height: 116px;
+        }
+    }
+    .novelty{
+        &::after{
+            height: 45%;
+        }
+        &__posts{
+            padding: 0px 0 30px;
+        }
+    }
+    .caption{
+        padding: 0 0 6px;
+        font-size: (20rem / 16);
+    }
+    .base-post{
+        &__caption{
+            font-size: (12rem / 16);
+        }
+    }
+    .main-post{
+        &__caption{
+            font-size: (20rem / 16);
+        }
+    }
+    .category-list__link,
+    .main-post__external{
+        font-size: (10rem / 16);
+    }
+}
