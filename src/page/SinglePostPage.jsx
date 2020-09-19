@@ -18,8 +18,8 @@ const SinglePost = ({post}) => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12">
-                        <div className="single__wrap row no-gutters">
-                            <div className="col-6 single__left d-flex align-items-end">
+                        <div className="single__wrap row no-gutters flex-md-row">
+                            <div className="col-md-6 col-12 single__left d-flex align-items-end">
                                 <div className="single__panel">
                                     <div className="d-flex justify-content-between align-items-center">
                                         {/* <ul className="category-list m-0">
@@ -36,7 +36,7 @@ const SinglePost = ({post}) => {
                                     </ul>
                                 </div>
                             </div>
-                            <div  className="col-6 single__img-wrap">
+                            <div  className="col-md-6 col-12 single__img-wrap">
                                 <img src={post.acf.post_image.sizes['twentyseventeen-featured-image']} alt={post.title.rendered} className="single__img filtered-img img-fluid"/>
                             </div>
                         </div>
@@ -45,7 +45,7 @@ const SinglePost = ({post}) => {
             </div>
             <div className="container">
                 <div className="row">
-                    <div className="col-8 m-auto">
+                    <div className="col-12 col-md-10 col-lg-8 m-auto">
                         <div className="single__content-text" dangerouslySetInnerHTML={{ __html: post.content.rendered }}/>
                     </div>
                 </div>

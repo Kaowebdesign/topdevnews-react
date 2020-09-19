@@ -23,10 +23,10 @@ const CategoryPostPage = ({posts,categoryName}) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-9">
+                    <div className="col-lg-9 col-12">
                         <div className="row">
                             {posts.map((item,index) => (
-                                <div className="col-6" key={index}>
+                                <div className="col-sm-6 col-12" key={index}>
                                     <Link to={`/post/${POST_TYPE[item.categories[0]]}/${item.slug}`} className="base-post__link">
                                         <div className="d-flex justify-content-between align-items-center">
                                             <ul className="category-list m-0">
@@ -51,8 +51,8 @@ const CategoryPostPage = ({posts,categoryName}) => {
                             ))}
                         </div>
                     </div>
-                    <div className="col-3">
-                        <h2 className="caption caption_base">Топ новости:</h2>
+                    <div className="col-lg-3 col-12">
+                        <h2 className="caption caption_base category_top">Топ новости:</h2>
                         <TopPosts/>
                     </div>
                 </div>

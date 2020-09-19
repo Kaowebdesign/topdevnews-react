@@ -24,6 +24,9 @@ class Home extends Component {
               <div className="col-12 col-md-8 col-lg-6">
                 <MainPost posts={this.props.mainPosts} />
               </div>
+              <div className="col-lg-3 col-sm-6 col-12 d-block d-md-none">
+                <h2 className="caption caption_base caption_top">Топ новости:</h2>
+              </div>
               <div className="col-12 col-md-4 col-lg-3">
                 <TopPosts/>
               </div>

@@ -15,11 +15,38 @@
         &__caption{
             font-size: (18rem / 16);
         }
-        &__img-wrap{
-            // height: 180px;
-        }
         &__link{
             margin-bottom: 10px;
+        }
+        &__info{
+            font-size: (10rem / 16);
+        }
+    }
+    .single{
+        &__title{
+            font-size: (24rem / 16);
+        }
+        &__description{
+            font-size: (12rem / 16);
+            margin-bottom: 10px;
+        }
+    }
+    .single__content-text{
+        h2{
+            font-size: (22rem / 16);
+            margin: 10px 0 15px;
+        }
+        h3{
+            font-size: (20rem / 16);
+            margin: 10px 0 15px;
+        }
+        h4{
+            font-size: (18rem / 16);
+            margin: 20px 0 20px;
+        }
+        
+        p{
+            font-size: (16rem / 16);
         }
     }
     .main-post{
@@ -52,13 +79,13 @@
     }
     .base-post{
         &__caption{
-            font-size: (14rem / 16);
-        }
-        &__img-wrap{
-            // height: 150px;
+            font-size: (16rem / 16);
         }
         &__link{
             margin-bottom: 0px;
+        }
+        &__description{
+            font-size: (12rem / 16);
         }
     }
     .recomend-post{
@@ -108,9 +135,35 @@
             font-size: (10rem / 16);
         }
     }
-    .top-posts{
-        .base-post__img-wrap{
-            // height: 116px;
+    .single{
+        &__panel{
+            padding: 30px;
+        }
+        &__title{
+            font-size: (20rem / 16);
+            margin-bottom: 7px;
+        }
+        &__description{
+            font-size: (10rem / 16);
+            margin-bottom: 7px;
+        }
+    }
+    .single__content-text{
+        h2{
+            font-size: (18rem / 16);
+            margin: 10px 0 15px;
+        }
+        h3{
+            font-size: (16rem / 16);
+            margin: 10px 0 15px;
+        }
+        h4{
+            font-size: (16rem / 16);
+            margin: 20px 0 20px;
+        }
+        
+        p{
+            font-size: (14rem / 16);
         }
     }
     .novelty{
@@ -127,7 +180,7 @@
     }
     .base-post{
         &__caption{
-            font-size: (12rem / 16);
+            font-size: (16rem / 16);
         }
     }
     .main-post{
@@ -136,7 +189,9 @@
         }
     }
     .category-list__link,
-    .main-post__external{
+    .main-post__external,
+    .single__category,
+    .base-post__date{
         font-size: (10rem / 16);
     }
 }
@@ -151,9 +206,41 @@
     .home-wrap{
         padding: 40px 30px;
     }
+    .base-post__date{
+        font-size: (10rem / 16);
+    }
+    .single__img-wrap{
+        padding-top: 35%;
+    }
+    .category-page{
+        .top-posts{
+            display: flex;
+            padding-top: 30px;
+    
+            .base-post__link{
+                &:first-child{
+                    padding-right: 15px;
+                }
+                &:last-child{
+                    padding-left: 15px;
+                }
+            }
+        }
+        .category_top{
+            width: calc(50% - 15px);
+            padding-top: 60px;
+            margin-bottom: 0;
+        }
+    }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
+    .caption{
+        &_top{
+            padding-top: 60px;
+            margin-bottom: 0;
+        }
+    }
     .footer__text{
         max-width: 250px;
     }
@@ -173,7 +260,8 @@
     .recomend-wrap{
         padding: 0px;
     }
-    .home-wrap{
+    .home-wrap,
+    .footer{
         padding: 30px;
     }
     .menu__icon{
@@ -188,10 +276,19 @@
             font-size: (14rem / 16);
         }
     }
-    
-    
+    .single__img-wrap{
+        padding-top: 50%;
+        margin-top: 15px;
+    }
+    .single__panel{
+        padding: 60px 30px;
+    }
 }
 @media only screen and (max-width: 576px) {
+    .header__title{
+        font-size: (28rem / 16);
+    }
+    .category-page .top-posts,
     .top-posts{
         flex-direction: column;
         .base-post__link{
@@ -200,6 +297,39 @@
                 padding: 0;
             }
         }
+    }
+    .category-page{
+        .category_top{
+            width: 100%;
+        }
+    }
+    .recomend-post__img-wrap {
+        padding-bottom: 56%;
+    }
+    .recomend-post__panel {
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .recomend-wrap{
+        display: none;
+    }
+    .home-wrap{
+        padding: 20px;
+    }
+    .nav{
+        margin:0 35px;
+    }
+    .menu__icon{
+        top: 73px;
+        right: -25px;
+    }
+    .single__panel {
+        padding: 40px 15px;
+    }
+    .single__img-wrap{
+        padding-top: 65%;
     }
 }
 
