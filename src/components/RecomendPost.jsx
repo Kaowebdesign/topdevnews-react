@@ -8,7 +8,7 @@ const RecomendPost = ({posts}) => {
 
     return(
         <div>
-            <Link to={`/post/recomend/${posts[0].slug}`} className="recomend-post__link main-post__link">
+            <div className="recomend-post__link main-post__link">
                 <h2 className="recomend-post__title mb-0">Мы рекомендуем:</h2>
                 <div className="recomend-post__img-wrap">
                     <img src={posts[0].acf.post_image.sizes['twentyseventeen-featured-image']} alt={posts[0].title.rendered} className="recomend-post__img"/>
@@ -24,13 +24,13 @@ const RecomendPost = ({posts}) => {
                         </div>
                         <div className="row">
                             <div className="col-12 col-sm-10 col-md-8">
-                                <h2 className="recomend-post__caption">{posts[0].title.rendered}</h2>
+                            <Link to={`/post/recomend/${posts[0].slug}`} className="base-post__route"><h2 className="recomend-post__caption">{posts[0].title.rendered}</h2></Link>
                                 <p className="recomend-post__date m-0">{posts[0].acf.post_date}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </Link>
+            </div>
         </div>
     )
 }

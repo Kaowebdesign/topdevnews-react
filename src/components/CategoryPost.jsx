@@ -10,7 +10,7 @@ const CategoryPost = ({posts,category}) => {
     return(
         <div className="col-12 col-sm-6 col-lg-3">
             {posts.map((item,index) => (
-                <Link to={`/post/${category}/${item.slug}`} className="base-post__link" key={index}>
+                <div className="base-post__link" key={index}>
                     <div className="d-flex justify-content-between align-items-center">
                         <ul className="category-list m-0">
                             {item.acf.post_categories && item.acf.post_categories.map(elem => (
@@ -27,8 +27,8 @@ const CategoryPost = ({posts,category}) => {
                     <div className="base-post__info d-flex justify-content-between mt-2">
                         <span className="base-post__date">{item.acf.post_date}</span>
                     </div>
-                    <h2 className="base-post__caption mt-0 mb-2">{item.title.rendered}</h2>
-                </Link>
+                    <Link to={`/post/${category}/${item.slug}`} className="base-post__route"><h2 className="base-post__caption mt-0 mb-2">{item.title.rendered}</h2></Link>
+                </div>
             ))}
         </div>
     )

@@ -65,8 +65,8 @@ h2,h3,h4,p,span{
         border-color: rgba(0,0,0,.3);
         transform:translateX(0);
     }
-    &__link:hover .base-post__caption{
-        color: rgba(26, 26, 26,.75);
+    &__route{
+        @extend %nullLink;
     }
     &__img-wrap{
         position: relative;
@@ -104,6 +104,9 @@ h2,h3,h4,p,span{
         font-family: 'PT Serif', serif;
         font-size: 28px;
         font-weight: 700;
+        &:hover{
+            color: rgba(26, 26, 26,.75);
+        }
     }
     &__caption_sm{
         font-size: 22px;
@@ -201,6 +204,9 @@ h2,h3,h4,p,span{
         font-size: 32px;
         margin-bottom: 15px;
         font-weight: 700;
+        &:hover{
+            opacity: .7;
+        }
     }
     &__item{
         color: rgba(255, 255, 255, 0.7);
