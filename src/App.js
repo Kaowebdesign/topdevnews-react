@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'
 import { ConnectedRouter } from 'connected-react-router'
 import routes from './routes';
@@ -35,29 +35,38 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-class App extends Component {
+const App = (props) => {
 
-  componentDidMount(){
+  useEffect(() => {
     //get categories
-    this.props.onGetCategories();
+    props.onGetCategories();
     //get all posts
-    this.props.getPosts();
-  }
-  
-  render(){
-    return (
-      <div>
-        <ConnectedRouter history={this.props.history}>
-          <Header siteTitle="Top Developer News" categories={this.props.categories} />
-          <AsideNav categories={this.props.categories} />
-          { routes }
-          <Footer siteTitle="Top Developer News" />
-        </ConnectedRouter>
-      </div>
-    )
-  }
+    props.getPosts();
+  },[]);
 
-}
+  const [showAside, setShowAside] = useState(false);
+
+  const openAside = () => {
+    setShowAside(true);
+  };
+
+  const closeAside = () => {
+    setShowAside(false);
+  };
+
+  
+  return (
+    <>
+      <ConnectedRouter history={props.history}>
+        <Header siteTitle="Top Developer News" categories={props.categories} onOpenAside={openAside}/>
+        <AsideNav categories={props.categories} showAside={showAside} onCloseAside={closeAside} />
+        { routes }
+        <Footer siteTitle="Top Developer News" />
+      </ConnectedRouter>
+    </>
+  )
+
+};
 
 
 

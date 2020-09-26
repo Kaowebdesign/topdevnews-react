@@ -1,12 +1,15 @@
 import React from 'react';
 import Nav from './Nav';
 
-const Header = ({siteTitle,categories}) => (
+const Header = ({siteTitle,categories,onOpenAside}) => (
     <header className="header">
       <div className="header__top">
         <h1 className="header__title mb-0">{siteTitle}</h1>
+          <button className="base-button base-button_upgrade">
+            Upgrade
+          </button>
       </div>
-      <Nav categories={categories}/>
+      <Nav categories={categories} onOpenAside={onOpenAside}/>
     </header>
   );
 

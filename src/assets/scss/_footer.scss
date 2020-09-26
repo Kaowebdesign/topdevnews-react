@@ -1,6 +1,15 @@
 .footer{
     background-color: rgb(26,26,26);
     padding: 30px 60px;
+    &_bottom-line{
+        border-bottom: 1px solid rgba(235, 235, 235, 0.2);
+    }
+    &__caption{
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: rgba(235,235,235,.2);
+    }
     &__text{
         color: rgba(255,255,255,.9);
         font-size: (14rem / 16);
