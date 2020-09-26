@@ -98,14 +98,14 @@
             opacity: 0;
         }
     }
-    &:hover{
-        transform: translateX(0);
-        background: rgb(26,26,26);
-        border-color: rgb(26,26,26);
-    }
-    &:hover .menu__icon{
-        opacity: 0;
-    }
+    // &:hover{
+    //     transform: translateX(0);
+    //     background: rgb(26,26,26);
+    //     border-color: rgb(26,26,26);
+    // }
+    // &:hover .menu__icon{
+    //     opacity: 0;
+    // }
     &__wrap{
         @extend %noneScrollBar;
         height: 100%;
@@ -125,6 +125,7 @@
         font-weight: 700;
         color:rgb(26,26,26);
         transition: .6s;
+        background: transparent;
     }
     &__item{
         margin-bottom: 15px;

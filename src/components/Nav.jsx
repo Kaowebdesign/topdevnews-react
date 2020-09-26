@@ -16,7 +16,7 @@ const Nav = function ({categories,onOpenAside}) {
     return (
       <nav className="nav d-flex justify-content-center">
         <div className="nav__buttons nav__buttons_left">
-          <button className="base-icon" onClick={() => onOpenAside()}>
+          <button className="base-icon base-icon_menu" onClick={() => onOpenAside()}>
             <img src={menu} alt="menu" className="base-icon__img"/>
           </button>
         </div>

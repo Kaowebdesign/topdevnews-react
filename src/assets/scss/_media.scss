@@ -98,7 +98,7 @@
         }
     }
     .nav{
-        padding: 10px 15px;
+        padding: 10px 110px;
         &__link{
             font-size: (12rem / 16);
         }
@@ -198,7 +198,7 @@
 @media only screen and (max-width: 992px) {
     .nav{
         margin: 0 45px;
-        padding: 5px 15px;
+        padding: 5px 110px;
     }
     .header__top{
         padding: 20px 30px 16px;
@@ -233,7 +233,17 @@
         }
     }
 }
-
+@media only screen and (max-width: 768px) {
+    .menu{
+        width: 100%;
+        &__icon{
+            display: none;
+        }
+        &__list{
+            text-align: center;
+        }
+    }
+}
 @media only screen and (max-width: 767px) {
     .caption{
         &_top{
@@ -264,10 +274,7 @@
     .footer{
         padding: 30px;
     }
-    .menu__icon{
-        top: 84px;
-        transform: rotate(-90deg) translateY(0);
-    }
+    
     .recomend-post{
         &__img-wrap{
             padding-bottom: 46%;

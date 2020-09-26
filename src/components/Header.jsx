@@ -5,9 +5,6 @@ const Header = ({siteTitle,categories,onOpenAside}) => (
     <header className="header">
       <div className="header__top">
         <h1 className="header__title mb-0">{siteTitle}</h1>
-          <button className="base-button base-button_upgrade">
-            Upgrade
-          </button>
       </div>
       <Nav categories={categories} onOpenAside={onOpenAside}/>
     </header>

@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import close from '../assets/img/close.svg'
 
-const AsideNav = ({categories,showAside,onCloseAside}) => {
+const AsideNav = ({categories,showAside,onOpenAside,onCloseAside}) => {
     let classes = ['menu'];
     
     if(showAside){
@@ -17,22 +17,22 @@ const AsideNav = ({categories,showAside,onCloseAside}) => {
                 </button>
                 <ul className="menu__list m-0">
                     <li className="menu__item">
-                        <Link to="/" className="menu__link menu__link_home">Home</Link>
+                        <Link to="/" className="menu__link menu__link_home" onClick={() => onCloseAside()}>Home</Link>
                     </li>
                     {categories.map(item => (
                         <li className="menu__item" key={item.id}>
-                            <Link to={`/posts/${item.name}`} className="menu__link">
+                            <Link to={`/posts/${item.name}`} onClick={() => onCloseAside()} className="menu__link">
                                 {item.name}
                             </Link>
                         </li>
                     ))}
                     <li className="menu__item">
-                        <Link to="/about" className="menu__link menu__link_home">About</Link>
+                        <Link to="/about" className="menu__link menu__link_home" onClick={() => onCloseAside()}>About</Link>
                     </li>
                 </ul>
-                <div href="#" className="menu__icon">
+                <button className="menu__icon" onClick={() => onOpenAside()}>
                     <span className="menu__icon_arrow">Меню</span>
-                </div>
+                </button>
             </div>
         </div>
     )
