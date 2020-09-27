@@ -42,6 +42,7 @@
         @extend %absolutePos;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 15;
         &_left{
             left: 0;
         }
