@@ -26,9 +26,19 @@ const Nav = function ({categories,onOpenAside}) {
         <Link to={`/posts/${item.name}`} className="nav__link" >{item.name}</Link>
       </li>
     );
+
+    //fixed nav, when user scroll
+
+    window.addEventListener('scroll',function(nav){
+      if(window.scrollY > document.getElementById('main-nav').scrollTop){
+        document.getElementById('main-nav').classList.add('active');
+      }else{
+        document.getElementById('main-nav').classList.remove('active');
+      }
+    });
     
     return (
-      <nav className="nav d-flex justify-content-center">
+      <nav className="nav d-flex justify-content-center" id="main-nav">
         <Search showSearch={showSearch}/>
         <div className="nav__buttons nav__buttons_left">
           <button className="base-icon base-icon_menu mr-4" onClick={() => onOpenAside()}>

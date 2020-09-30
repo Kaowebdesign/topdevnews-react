@@ -10,9 +10,11 @@ import * as serviceWorker from './serviceWorker';
 const store = configureStore();
 
 ReactDOM.render((
-  <Provider store={store}>
-     <App history={history} />
-   </Provider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <App history={history} />
+    </Provider>
+   </React.StrictMode>
 ),document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

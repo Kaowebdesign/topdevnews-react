@@ -18,7 +18,22 @@
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     text-transform: capitalize;
-
+    &.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        z-index: 998;
+        margin: 0;
+        padding: 15px 140px;
+        .nav__buttons_left{
+            left: 40px;
+        }
+        .nav__buttons_right{
+            right: 40px;
+        }
+    }
     &::after,
     &::before{
         content: '';
