@@ -54,13 +54,15 @@ const App = (props) => {
     setShowAside(false);
   };
 
+  const siteTitle = "Top Developer News";
+
   return (
     <>
       <ConnectedRouter history={props.history} >
-        <Header siteTitle="Top Developer News" categories={props.categories} onOpenAside={openAside}/>
+        <Header siteTitle={siteTitle} categories={props.categories} onOpenAside={openAside}/>
         <AsideNav categories={props.categories} showAside={showAside} onOpenAside={openAside} onCloseAside={closeAside} />
         { routes }
-        <Footer siteTitle="Top Developer News" />
+        <Footer siteTitle={siteTitle} />
       </ConnectedRouter>
     </>
   )

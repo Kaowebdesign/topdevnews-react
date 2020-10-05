@@ -11,6 +11,14 @@ const CategoryPostPage = ({posts,categoryName}) => {
             <p>Загрузка...</p>
         )
     }
+
+    window.addEventListener('scroll',function(nav){
+        if(window.scrollY > (document.getElementById('category-back').scrollTop + 50)){
+            console.log('go');
+        }else{
+            console.log('stop');
+        }
+    });
     
     return(
         <div className="home-wrap category-page">
@@ -19,6 +27,7 @@ const CategoryPostPage = ({posts,categoryName}) => {
                     <div className="col-12">
                         <div className="category-page__panel text-center">
                             <h1 className="caption caption_category mb-0">{categoryName}</h1>
+                            <span className="category-page__panel_back" id="category-back"></span>
                         </div>
                     </div>
                 </div>

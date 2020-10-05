@@ -1,13 +1,7 @@
 import React from 'react';
 import Nav from './Nav';
 
-interface IHeaderProps {
-  siteTitle: string,
-  categories: Array<{}>,
-  onOpenAside():void
-}
-
-const Header: React.FC<IHeaderProps> = ({siteTitle,categories,onOpenAside}) => {
+const Header = ({siteTitle,categories,onOpenAside}) => {
 
   return(
     <header className="header">

@@ -140,18 +140,18 @@ h2,h3,h4,p,span{
         z-index: 1;
         display: inline-block;
         margin:0 auto;
-        &::after{
-            content: '';
-            @extend %absolutePos;
-            display: block;
-            width: calc(50% + 15px);
-            height: calc(100% + 10px);
-            background: #f5f5f5;
-            top: 50%;
-            left: 50%;
-            transform: translateY(-50%);
-            z-index: -1;
-        }
+        // &::after{
+        //     content: '';
+        //     @extend %absolutePos;
+        //     display: block;
+        //     width: calc(50% + 15px);
+        //     height: calc(100% + 10px);
+        //     background: #f5f5f5;
+        //     top: 50%;
+        //     left: 50%;
+        //     transform: translateY(-50%);
+        //     z-index: -1;
+        // }
     }
 }
 
@@ -416,7 +416,19 @@ h2,h3,h4,p,span{
     &__panel{
         @extend %basePos;
         width: 100%;
-        padding:20px 0 50px;
+        padding:50px 10px;
+        margin-bottom: 40px;
+        &_back{
+            @extend %absolutePos;
+            display: block;
+            width: 100%;
+            top: 0;
+            right: 0;
+            transform-origin: right;
+            transform: scaleX(0.5);
+            background: #f5f5f5;
+            height: 100%;
+        }
     }
     &__top-panel{
         position: sticky;
