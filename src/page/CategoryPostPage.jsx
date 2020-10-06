@@ -13,10 +13,19 @@ const CategoryPostPage = ({posts,categoryName}) => {
     }
 
     window.addEventListener('scroll',function(nav){
-        if(window.scrollY > (document.getElementById('category-back').scrollTop + 50)){
-            console.log('go');
+        let elemPosTop = window.scrollY;
+        let scrollCoef = 0.005;
+
+        if(window.scrollY > 0){
+
+            if( (0.5 + Math.abs(elemPosTop) * scrollCoef) <= 1){
+                document.getElementById('category-back').style.transform = "scaleX(" + ( 0.5 + Math.abs(elemPosTop) * scrollCoef) + ")";
+            }else{
+                document.getElementById('category-back').style.transform = "scaleX(1)";
+            }
+            
         }else{
-            console.log('stop');
+            document.getElementById('category-back').style.transform = "scaleX(0.5)";
         }
     });
     

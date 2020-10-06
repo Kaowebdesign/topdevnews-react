@@ -28,9 +28,8 @@ const Nav = function ({categories,onOpenAside}) {
     );
 
     //fixed nav, when user scroll
-
     window.addEventListener('scroll',function(nav){
-      if(window.scrollY > document.getElementById('main-nav').scrollTop){
+      if(window.scrollY > 93){
         document.getElementById('main-nav').classList.add('active');
       }else{
         document.getElementById('main-nav').classList.remove('active');
