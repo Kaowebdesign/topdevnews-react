@@ -10,7 +10,9 @@
         font-weight: 700;
     }
 }
-
+.nav-wrap{
+    min-height: 56px;
+}
 .nav{
     @extend %basePos;
     padding: 15px 110px;
@@ -27,6 +29,7 @@
         z-index: 998;
         margin: 0;
         padding: 15px 140px;
+        opacity: 1 !important;
         .nav__buttons_left{
             left: 40px;
         }

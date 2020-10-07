@@ -28,8 +28,19 @@ const Nav = function ({categories,onOpenAside}) {
     );
 
     //fixed nav, when user scroll
-    window.addEventListener('scroll',function(nav){
-      if(window.scrollY > 93){
+    window.addEventListener('scroll',function(){
+
+      let elemPosTop = window.scrollY;
+      let scrollCoef = 0.008;
+      
+      //change opacity to 0
+      if(window.scrollY > 0){
+        document.getElementById('main-nav').style.opacity = ( 1 - Math.abs(elemPosTop) * scrollCoef);
+      }else{
+        document.getElementById('main-nav').style.opacity = "1";
+      }
+      //add active class and show menu on top of page
+      if(window.scrollY > 250){
         document.getElementById('main-nav').classList.add('active');
       }else{
         document.getElementById('main-nav').classList.remove('active');
@@ -37,40 +48,42 @@ const Nav = function ({categories,onOpenAside}) {
     });
     
     return (
-      <nav className="nav d-flex justify-content-center" id="main-nav">
-        <Search showSearch={showSearch}/>
-        <div className="nav__buttons nav__buttons_left">
-          <button className="base-icon base-icon_menu mr-4" onClick={() => onOpenAside()}>
-            <img src={menu} alt="menu" className="base-icon__img"/>
-          </button>
-          <button className="base-icon base-icon_night">
-            <img src={moon} alt="night" className="base-icon__img"/>
-          </button>
-        </div>
-        <ul className="nav__list mb-0">
-          <li className="nav__item"><Link to="/" className="nav__link nav__link_home">Home</Link></li>
-          {listItems}
-          <li className="nav__item"><Link to="/about" className="nav__link nav__link_home">About</Link></li>
-        </ul>
-        <div className="nav__buttons nav__buttons_right">
-          { 
-              showSearch ?
-                <button className="base-icon mr-4" onClick={() => closeSearch()}>
-                  <img src={close} alt="menu" className="base-icon__img"/>
-                </button>
-              :
-                <button className="base-icon mr-4" onClick={() => openSearch()}>
-                  <img src={search} alt="close" className="base-icon__img"/>
-                </button>
-          }
-          <button className="base-icon mr-4">
-            <img src={bookmark} alt="menu" className="base-icon__img"/>
-          </button>
-          <button className="base-icon">
-            <img src={bell} alt="menu" className="base-icon__img"/>
-          </button>
-        </div>
-      </nav>
+      <div className="nav-wrap">
+        <nav className="nav d-flex justify-content-center" id="main-nav">
+          <Search showSearch={showSearch}/>
+          <div className="nav__buttons nav__buttons_left">
+            <button className="base-icon base-icon_menu mr-4" onClick={() => onOpenAside()}>
+              <img src={menu} alt="menu" className="base-icon__img"/>
+            </button>
+            <button className="base-icon base-icon_night">
+              <img src={moon} alt="night" className="base-icon__img"/>
+            </button>
+          </div>
+          <ul className="nav__list mb-0">
+            <li className="nav__item"><Link to="/" className="nav__link nav__link_home">Home</Link></li>
+            {listItems}
+            <li className="nav__item"><Link to="/about" className="nav__link nav__link_home">About</Link></li>
+          </ul>
+          <div className="nav__buttons nav__buttons_right">
+            { 
+                showSearch ?
+                  <button className="base-icon mr-4" onClick={() => closeSearch()}>
+                    <img src={close} alt="menu" className="base-icon__img"/>
+                  </button>
+                :
+                  <button className="base-icon mr-4" onClick={() => openSearch()}>
+                    <img src={search} alt="close" className="base-icon__img"/>
+                  </button>
+            }
+            <button className="base-icon mr-4">
+              <img src={bookmark} alt="menu" className="base-icon__img"/>
+            </button>
+            <button className="base-icon">
+              <img src={bell} alt="menu" className="base-icon__img"/>
+            </button>
+          </div>
+        </nav>
+      </div>
     );
 };
 
