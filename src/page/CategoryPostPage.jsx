@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import {Link} from "react-router-dom";
 import {POST_TYPE} from "../constants/api";
 import TopPosts from "../components/TopPosts";
 
 const CategoryPostPage = ({posts,categoryName}) => {
+
+    useEffect(() => {
+        window.scrollTo(0,0);
+    });
 
     if(!posts.length){
         return(
