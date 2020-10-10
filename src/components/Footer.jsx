@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import Subscribe from '../components/Subscribe';
  
 const Footer = ({siteTitle}) => (
-    <footer className="footer">
+    <footer className="footer" id="footer">
         <div className="container-fluid">
             <div className="row">
                 <div className="col-12 text-center footer_bottom-line pb-4">

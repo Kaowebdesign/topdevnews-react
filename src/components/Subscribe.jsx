@@ -4,7 +4,7 @@ const Subscribe = () => {
 
     return(
         <div className="subscribe">
-            <input type="text" className="subscribe__input search-bar__input" placeholder="Подписаться на новости"/>
+            <input type="text" className="subscribe__input search-bar__input" placeholder="E-mail адресс"/>
             <button className="subscribe__button search-bar__button ml-2">Подписаться</button>
         </div>
     );

@@ -17,7 +17,7 @@ class Home extends Component {
 
   render(){
     return (
-      <div className="home">
+      <div className="home" id="base-wrap">
         <div className="home-wrap">
           <div className="container-fluid">
             <div className="row">

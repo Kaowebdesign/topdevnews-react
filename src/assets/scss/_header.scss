@@ -20,7 +20,7 @@
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     text-transform: capitalize;
-    &.active{
+    &.fixed{
         position: fixed;
         top: 0;
         left: 0;
@@ -29,13 +29,16 @@
         z-index: 998;
         margin: 0;
         padding: 15px 140px;
-        opacity: 1 !important;
         .nav__buttons_left{
             left: 40px;
         }
         .nav__buttons_right{
             right: 40px;
         }
+    }
+    &.active{
+        transition: .3s;
+        opacity: 1 !important;
     }
     &::after,
     &::before{

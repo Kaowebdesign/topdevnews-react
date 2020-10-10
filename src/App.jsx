@@ -44,6 +44,34 @@ const App = (props) => {
     props.getPosts();
   },[]);
 
+  //fixed nav, when user scroll
+  window.addEventListener('scroll',function(){
+
+    let elemPosTop = window.scrollY;
+    let scrollCoef = 0.008;
+
+    //change opacity to 0
+    if(window.scrollY > 0){
+      document.getElementById('main-nav').style.opacity = ( 1 - Math.abs(elemPosTop) * scrollCoef);
+    }else{
+      document.getElementById('main-nav').style.opacity = "1";
+    }
+    //add active class and show menu on top of page
+    if(window.scrollY > 150){
+      document.getElementById('main-nav').classList.add('fixed');
+    }else{
+      document.getElementById('main-nav').classList.remove('fixed');
+    }
+
+    if(window.scrollY > 250){
+      document.getElementById('main-nav').classList.add('active');
+    }else{
+      document.getElementById('main-nav').classList.remove('active');
+    }
+
+  });
+
+
   const [showAside, setShowAside] = useState(false);
 
   const openAside = () => {

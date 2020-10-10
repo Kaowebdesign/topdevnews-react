@@ -20,16 +20,18 @@ const CategoryPostPage = ({posts,categoryName}) => {
         let elemPosTop = window.scrollY;
         let scrollCoef = 0.005;
 
-        if(window.scrollY > 0){
+         let categoryBack = document.getElementById('category-back');
+
+        if(categoryBack && window.scrollY > 0){
 
             if( (0.5 + Math.abs(elemPosTop) * scrollCoef) <= 1){
-                document.getElementById('category-back').style.transform = "scaleX(" + ( 0.5 + Math.abs(elemPosTop) * scrollCoef) + ")";
+                categoryBack.style.transform = "scaleX(" + ( 0.5 + Math.abs(elemPosTop) * scrollCoef) + ")";
             }else{
-                document.getElementById('category-back').style.transform = "scaleX(1)";
+                categoryBack.style.transform = "scaleX(1)";
             }
             
-        }else{
-            document.getElementById('category-back').style.transform = "scaleX(0.5)";
+        }else if(categoryBack && (window.scrollY == 0 || window.scrollY < 0)){
+            categoryBack.style.transform = "scaleX(0.5)";
         }
     });
     
@@ -49,7 +51,7 @@ const CategoryPostPage = ({posts,categoryName}) => {
                         <div className="row">
                             {posts.map((item,index) => (
                                 <div className="col-sm-6 col-12" key={index}>
-                                    <Link to={`/post/${POST_TYPE[item.categories[0]]}/${item.slug}`} className="base-post__link">
+                                    <div className="base-post__link">
                                         <div className="d-flex justify-content-between align-items-center">
                                             <ul className="category-list m-0">
                                                 {item.acf.post_categories && item.acf.post_categories.map(elem => (
@@ -66,9 +68,9 @@ const CategoryPostPage = ({posts,categoryName}) => {
                                         <div className="base-post__info d-flex justify-content-between mt-2">
                                             <span className="base-post__date">{item.acf.post_date}</span>
                                         </div>
-                                        <h2 className="base-post__caption mt-0 mb-2">{item.title.rendered}</h2>
+                                        <Link to={`/post/${POST_TYPE[item.categories[0]]}/${item.slug}`} className="base-post__route"><h2 className="base-post__caption mt-0 mb-2">{item.title.rendered}</h2></Link>
                                         <p className="base-post__description mb-0" dangerouslySetInnerHTML={{__html:item.acf.post_description}}></p>
-                                    </Link>
+                                    </div>
                                 </div>
                             ))}
                         </div>

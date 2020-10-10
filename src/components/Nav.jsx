@@ -40,6 +40,12 @@ const Nav = function ({categories,onOpenAside}) {
         document.getElementById('main-nav').style.opacity = "1";
       }
       //add active class and show menu on top of page
+      if(window.scrollY > 150){
+        document.getElementById('main-nav').classList.add('fixed');
+      }else{
+        document.getElementById('main-nav').classList.remove('fixed');
+      }
+
       if(window.scrollY > 250){
         document.getElementById('main-nav').classList.add('active');
       }else{
