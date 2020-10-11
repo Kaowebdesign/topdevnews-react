@@ -37,23 +37,16 @@ class Home extends Component {
             </div>
             <div className="row recomend-wrap">
               <div className="col-12">
-                <RecomendPost posts={this.props.recomendPosts}/>
+                <RecomendPost posts={this.props.recomendPosts[0]}/>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="novelty">
-          <div className="home-wrap">
-            <div className="container-fluid">
-              <div className="row novelty__top">
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <h2 className="caption caption_base">Новости:</h2>
-                </div>
-              </div>
-              <div className="row novelty__posts">
-                <CategoryPost posts={this.props.noveltyPosts} category="novelty" />
+            <CategoryPost posts={this.props.noveltyPosts} category="novelty" more={false} title="Новости"/>
+            <div className="row recomend-wrap">
+              <div className="col-12">
+                <RecomendPost posts={this.props.recomendPosts[1]}/>
               </div>
             </div>
+            <CategoryPost posts={this.props.standartPosts} category="standart" more={true} title="Новости"/>
           </div>
         </div>
       </div>
